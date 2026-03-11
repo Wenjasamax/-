@@ -91,11 +91,3 @@ php scripts/seed.php
 php -S localhost:8000 -t public
 ```
 
-## Что приложить при сдаче
-
-- Ссылка на репозиторий.
-- Скриншоты 3 страниц:
-  - `/request/create`,
-  - `/dispatcher`,
-  - `/master`.
-- (Опционально) ссылка на деплой.
