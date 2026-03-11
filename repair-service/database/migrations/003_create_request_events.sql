@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS request_events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  request_id INT NOT NULL,
+  actor_id INT NULL,
+  action VARCHAR(40) NOT NULL,
+  note VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_events_request FOREIGN KEY (request_id) REFERENCES requests(id) ON DELETE CASCADE,
+  CONSTRAINT fk_events_actor FOREIGN KEY (actor_id) REFERENCES users(id) ON DELETE SET NULL
+);
