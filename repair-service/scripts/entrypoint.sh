@@ -2,9 +2,11 @@
 set -eu
 
 # Wait for MySQL availability before migrations.
-until mysql -h"${DB_HOST:-db}" -P"${DB_PORT:-3306}" -u"${DB_USERNAME:-user}" -p"${DB_PASSWORD:-password}" -e "SELECT 1" >/dev/null 2>&1; do
+count=0
+until [ $count -ge 30 ] || nc -z "${DB_HOST:-db}" "${DB_PORT:-3306}" 2>/dev/null; do
   echo "Waiting for DB..."
   sleep 2
+  count=$((count + 1))
 done
 
 if [ ! -f /var/www/vendor/autoload.php ]; then

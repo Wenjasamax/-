@@ -5,8 +5,9 @@ RUN apk add --no-cache \
     git \
     curl \
     libpng-dev \
-    libonig-dev \
     libxml2-dev \
+    sqlite-dev \
+    oniguruma-dev \
     zip \
     unzip \
     mysql-client

@@ -100,3 +100,10 @@ User: да
 
 User: Virtualization support not detected
 Docker Desktop failed to start because virtualisation support wasn’t detected. Contact your IT admin to enable virtualization or check system requirements. thats in docker
+## Запрос от 2026-03-11 13:38:20
+
+User: проверай
+
+## Запрос от 2026-03-11 13:50:00
+
+User: docker работает пожалуйста запусти всё

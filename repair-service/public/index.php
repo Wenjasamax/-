@@ -251,7 +251,8 @@ if ($path === '/master/done' && $method === 'POST') {
 
 if ($path === '/api/master/take' && $method === 'POST') {
 	$master = requireRole($auth, 'master');
-	$requestId = (int) ($_POST['request_id'] ?? 0);
+	$payload = json_decode(file_get_contents('php://input'), true) ?? [];
+	$requestId = (int) ($payload['request_id'] ?? 0);
 	$ok = $requests->takeInWork($requestId, (int) $master['id']);
 
 	if ($ok) {
